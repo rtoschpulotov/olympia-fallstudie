@@ -3,18 +3,18 @@
 -- Skript 2: Datenimport via COPY
 -- ============================================================
 -- WICHTIG: Reihenfolge strikt einhalten!
--- Tabellen mit Fremdschluessel muessen nach den
+-- Tabellen mit Fremdschlüssel müssen nach den
 -- referenzierten Tabellen importiert werden.
 --
 -- Reihenfolge:
--- 1. sports       (keine Abhaengigkeiten)
--- 2. countries    (keine Abhaengigkeiten)
--- 3. athletes     (keine Abhaengigkeiten)
--- 4. events       (benoetigt: sports)
--- 5. participations (benoetigt: alle anderen)
+-- 1. sports       (keine Abhängigkeiten)
+-- 2. countries    (keine Abhängigkeiten)
+-- 3. athletes     (keine Abhängigkeiten)
+-- 4. events       (benötigt: sports)
+-- 5. participations (benötigt: alle anderen)
 -- ============================================================
 
--- Dateipfad anpassen falls noetig:
+-- Dateipfad anpassen falls nötig:
 -- C:\Program Files\PostgreSQL\17\data\import\
 
 -- ------------------------------------------------------------
@@ -39,14 +39,14 @@ FROM 'C:\Program Files\PostgreSQL\17\data\import\athletes.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ';', QUOTE '"');
 
 -- ------------------------------------------------------------
--- 4. events importieren (benoetigt sports)
+-- 4. events importieren (benötigt sports)
 -- ------------------------------------------------------------
 COPY events(event_id, event_name, sport_id)
 FROM 'C:\Program Files\PostgreSQL\17\data\import\events.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ';', QUOTE '"');
 
 -- ------------------------------------------------------------
--- 5. participations importieren (benoetigt alle anderen)
+-- 5. participations importieren (benötigt alle anderen)
 -- ------------------------------------------------------------
 COPY participations(participation_id, athlete_id, noc_code,
                     sport_id, event_id, year, age, medal)

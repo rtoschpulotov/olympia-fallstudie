@@ -4,7 +4,7 @@
 -- ============================================================
 
 -- ------------------------------------------------------------
--- 1. Zeilenanzahl aller Tabellen pruefen
+-- 1. Zeilenanzahl aller Tabellen prüfen
 -- Erwartete Ergebnisse:
 --   athletes      = 87.734
 --   countries     = 222
@@ -24,7 +24,7 @@ SELECT 'participations',COUNT(*) FROM participations;
 
 -- ------------------------------------------------------------
 -- 2. JOIN-Test: Athleten mit ihren Medaillen
--- Prueft ob die Beziehung zwischen participations und athletes funktioniert
+-- Prüft ob die Beziehung zwischen participations und athletes funktioniert
 -- ------------------------------------------------------------
 SELECT a.name, p.year, p.medal
 FROM participations p
@@ -33,8 +33,8 @@ WHERE p.medal != 'None'
 LIMIT 10;
 
 -- ------------------------------------------------------------
--- 3. JOIN-Test: Top 10 Laender nach Teilnahmen
--- Prueft ob die Beziehung zwischen participations und countries funktioniert
+-- 3. JOIN-Test: Top 10 Länder nach Teilnahmen
+-- Prüft ob die Beziehung zwischen participations und countries funktioniert
 -- ------------------------------------------------------------
 SELECT c.country_name, COUNT(*) AS teilnahmen
 FROM participations p
@@ -45,7 +45,7 @@ LIMIT 10;
 
 -- ------------------------------------------------------------
 -- 4. JOIN-Test: Events mit Sportart und Teilnahmenanzahl
--- Prueft ob die Beziehungen ueber alle Tabellen hinweg funktionieren
+-- Prüft ob die Beziehungen über alle Tabellen hinweg funktionieren
 -- ------------------------------------------------------------
 SELECT e.event_name, s.sport_name, COUNT(*) AS teilnahmen
 FROM participations p
@@ -56,7 +56,7 @@ ORDER BY teilnahmen DESC
 LIMIT 10;
 
 -- ------------------------------------------------------------
--- 5. Medaillenverteilung pruefen
+-- 5. Medaillenverteilung prüfen
 -- Zeigt wie viele Gold, Silber, Bronze und None vergeben wurden
 -- ------------------------------------------------------------
 SELECT medal, COUNT(*) AS anzahl

@@ -3,8 +3,8 @@
 -- Skript 1: Datenbankstruktur erstellen
 -- ============================================================
 
--- ENUM-Typ fuer Medaillen definieren
--- Verhindert ungueltige Eingaben und ist effizienter als CHECK-Constraints
+-- ENUM-Typ für Medaillen definieren
+-- Verhindert ungültige Eingaben und ist effizienter als CHECK-Constraints
 CREATE TYPE medal_enum AS ENUM ('Gold', 'Silver', 'Bronze', 'None');
 
 -- ------------------------------------------------------------
@@ -51,7 +51,7 @@ CREATE TABLE events (
 
 -- ------------------------------------------------------------
 -- Tabelle: participations
--- Faktentabelle - verbindet alle Entitaeten
+-- Faktentabelle - verbindet alle Entitäten
 -- Jede Zeile = ein Athlet bei einem Event in einem Jahr
 -- ------------------------------------------------------------
 CREATE TABLE participations (
