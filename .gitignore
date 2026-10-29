@@ -1,0 +1,13 @@
+# Rohdaten und große Datendateien gehören nicht ins Repository
+data/
+*.zip
+
+# Zugangsdaten
+.env
+
+# Python- und Jupyter-Zwischendateien
+__pycache__/
+.ipynb_checkpoints/
+
+# Office-Sperrdateien, die entstehen, wenn eine Excel-Datei offen ist
+~$*
